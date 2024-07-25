@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Defines a function that generates the Pascal triangle """
 
+
 def pascal_triangle(n):
     """ Generates a Pascal triangle depending on the value of n """
     triangle = []
