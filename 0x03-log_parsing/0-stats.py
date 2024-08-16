@@ -66,7 +66,8 @@ def main() -> None:
         display_stat(code_count, total_size)
         sys.exit(0)
 
-    display_stat(code_count, total_size)
+    if line_count % 10 != 0:
+        display_stat(code_count, total_size)
 
 
 if __name__ == "__main__":
