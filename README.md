@@ -4,3 +4,4 @@
 - **0x01-lockboxes**: Contains the Lockboxes project
 - **0x03-log_parsing**: Contains the Log Parsing Project.
 - **0x04-utf8_validation**: Contains the UTF-8 Validation Project.
+- **0x05-nqueens**: Contains python file for the N Queens Project (BackTracking)

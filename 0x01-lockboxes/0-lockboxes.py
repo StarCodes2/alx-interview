@@ -4,14 +4,19 @@
 
 def canUnlockAll(boxes):
     """ Check boxes(list) for keys to other boxes. """
-    keys = set()
-    all_box = set()
+    unlocked = searchBox(boxes)
+    print(unlocked)
+    return len(unlocked) == len(boxes)
 
-    for key, box in enumerate(boxes):
-        if key > 0:
-            keys.add(key)
-        if box and len(box) > 0:
-            all_box.add(box[0])
-    unlocked = keys & all_box
 
-    return len(keys) == len(unlocked)
+def searchBox(boxes, unlocked=set(), key=0):
+    """ Traverse through a list using the keys in the list elements. """
+    if key not in unlocked:
+        unlocked.add(key)
+    for nKey in boxes[key]:
+        if nKey >= len(boxes):
+            continue
+        unlocked = searchBox(boxes, unlocked, nKey)
+
+    return unlocked
+
