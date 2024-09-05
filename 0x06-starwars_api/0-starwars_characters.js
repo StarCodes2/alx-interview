@@ -19,7 +19,10 @@ function getMovieCharacters (movieId) {
     const data = JSON.parse(body);
     const characters = data.characters;
 
-    characters.forEach(characterUrl => {
+    const characterNames = new Array(characters.length);
+    let completedRequests = 0;
+
+    characters.forEach((characterUrl, index) => {
       request(characterUrl, (error, response, body) => {
         if (error) {
           console.error('Failed to retrieve character data:', error.message);
@@ -27,7 +30,12 @@ function getMovieCharacters (movieId) {
         }
 
         const characterData = JSON.parse(body);
-        console.log(characterData.name);
+        characterNames[index] = characterData.name;
+        completedRequests++;
+
+        if (completedRequests === characters.length) {
+          characterNames.forEach(name => console.log(name));
+        }
       });
     });
   });
@@ -35,7 +43,7 @@ function getMovieCharacters (movieId) {
 
 const movieId = process.argv[2];
 if (!movieId) {
-  console.error('Usage: script.js <Movie ID>');
+  console.error('Usage: 0-starwars_characters.js <Movie ID>');
   process.exit(1);
 }
 
