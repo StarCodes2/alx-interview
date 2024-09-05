@@ -19,8 +19,6 @@ function getMovieCharacters (movieId) {
     const data = JSON.parse(body);
     const characters = data.characters;
 
-    let completedReq = 0;
-
     characters.forEach(characterUrl => {
       request(characterUrl, (error, response, body) => {
         if (error) {
@@ -30,11 +28,6 @@ function getMovieCharacters (movieId) {
 
         const characterData = JSON.parse(body);
         console.log(characterData.name);
-
-        completedReq++;
-        if (completedReq === characters.length) {
-          process.exit(0);
-        }
       });
     });
   });
