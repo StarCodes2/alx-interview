@@ -7,3 +7,4 @@
 - **0x05-nqueens**: Contains python file for the N Queens Project (BackTracking)
 - **0x06-starwars_api**: Contains JS file for the Star Wars API project. 
 - **0x07-rotate_2d_matrix**: Contains the python file for the Rotate 2D Matrix project.
+- **0x08-making_change**: Contains the python file for the change making problem project.
