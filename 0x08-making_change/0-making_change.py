@@ -17,7 +17,4 @@ def makeChange(coins, total):
             remain = idx - coin
             if remain >= 0:
                 mem[idx] = min(mem[remain] + 1, mem[idx])
-    if mem[total] > total:
-        return -1
-    else:
-        return mem[total]
+    return -1 if mem[total] > total else mem[total]
