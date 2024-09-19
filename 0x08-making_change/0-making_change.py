@@ -9,6 +9,7 @@ def makeChange(coins, total):
     if total < 1:
         return 0
     mem = [total + 1 for i in range(total + 1)]
+    mem[0] = 0
 
     for idx, val in enumerate(mem):
         if idx == 0:
