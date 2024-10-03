@@ -44,4 +44,4 @@ def isWinner(x, nums):
     elif wins[0] < wins[1]:
         return "Ben"
     else:
-        return "Draw"
+        return None
