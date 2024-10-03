@@ -17,6 +17,9 @@ def findPrime(numList):
 
 def isWinner(x, nums):
     """ Returns the winner of a prime game. """
+    if x <= 0 or not nums:
+        return None
+
     wins = [0, 0]
     for num in nums:
         numList = [i for i in range(1, num + 1)]
