@@ -2,22 +2,16 @@
 """ Defines a function that finds the winner of a prime game. """
 
 
-def isPrime(n):
-    """Check if a number is prime."""
-    if n < 2:
-        return False
-    for i in range(2, int(n ** 0.5) + 1):
-        if n % i == 0:
-            return False
-    return True
-
-
 def findPrime(numList):
     """ finds the first prime number in a list. """
     count = 0
     for num in numList:
-        if isPrime(num):
+        for n in range(1, num):
+            if num % n == 0:
+                count += 1
+        if count == 1:
             return num
+        count = 0
     return None
 
 
@@ -26,14 +20,9 @@ def isWinner(x, nums):
     if x <= 0 or not nums:
         return None
 
-    rounds = 1
     wins = [0, 0]
     for num in nums:
-        if rounds > x:
-            break
-
-        rounds += 1
-        numList = [i for i in range(1, num + 1)]
+        numList = [i for i in range(2, num + 1)]
         pick = findPrime(numList)
         turn = 0
 
