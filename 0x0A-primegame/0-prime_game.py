@@ -26,13 +26,13 @@ def isWinner(x, nums):
     if x <= 0 or not nums:
         return None
 
-    size = len(nums)
-    if size < x:
-        for n in range(size, x):
-            nums.append(nums[0])
-
+    rounds = 1
     wins = [0, 0]
     for num in nums:
+        if rounds > x:
+            break
+
+        rounds += 1
         numList = [i for i in range(1, num + 1)]
         pick = findPrime(numList)
         turn = 0
