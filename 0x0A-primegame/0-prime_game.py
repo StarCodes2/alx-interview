@@ -37,7 +37,7 @@ def isWinner(x, nums):
             pick = findPrime(numList)
             turn = 1 - turn
 
-        if turn % 2 == 0:
+        if turn == 0:
             wins[1] += 1
         else:
             wins[0] += 1
