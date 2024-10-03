@@ -40,7 +40,7 @@ def isWinner(x, nums):
         if track % 2 == 1:
             wins[1] += 1
         else:
-            win[0] += 1
+            wins[0] += 1
 
     if wins[0] > wins[1]:
         return "Maria"
