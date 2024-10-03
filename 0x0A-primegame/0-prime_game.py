@@ -26,7 +26,7 @@ def isWinner(x, nums):
         pick = findPrime(numList)
         turn = 0
 
-        while (pick):
+        while pick:
             numList.remove(pick)
 
             mul = 2
